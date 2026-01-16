@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fitness soufiane</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="icon">AL</span> IKHWA
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+           <a href="apropos.html">A propos de nous</a>
+           <a href="portfolio.html">portfolio</a>
+            <a href="servise.html">Services</a>
+            <a href="equipe.html">Equipe</a>
+            <a href="contact.html" class="btn-support">Contact </a>
+        </nav>
+    </header>
+
+<section class="contact">
+    <h2>Contactez-nous</h2>
+
+    <p class="contact-text">
+      Bienvenue chez <b>Association AL IKHWA</b> 💪  
+      Notre équipe est à votre écoute pour répondre à toutes vos demandes.
+      Laissez-nous votre message et choisissez votre moyen de contact.
+    </p>
+
+    <textarea id="message" placeholder="Votre message..." rows="5"></textarea>
+
+    <div class="contact-icons">
+        <a href="#" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" onclick="sendFacebook()"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" onclick="sendInstagram()"><i class="fab fa-instagram"></i></a>
+        <a href="#" onclick="makeCall()"><i class="fas fa-phone"></i></a>
+    </div>
+</section>
+
+<script>
+function getMessage() {
+  return document.getElementById("message").value.trim();
+}
+
+function sendWhatsApp() {
+  let msg = getMessage();
+  if (!msg) { alert("Veuillez écrire un message d'abord!"); return; }
+  let phone = "212696476340"; // رقمك واتساب
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+function sendFacebook() {
+  let msg = getMessage();
+  if (!msg) { alert("Veuillez écrire un message d'abord!"); return; }
+  // ملاحظة: إرسال رسالة مباشرة عبر الرابط Facebook غير ممكن رسمياً، غادي نحط الرابط للمحادثة العامة
+  window.open(`https://www.facebook.com/messages/t/YourPageID`, "_blank");
+}
+
+function sendInstagram() {
+  alert("Instagram لا يسمح بإرسال الرسائل مباشرة من الرابط. استخدم الرابط لمراسلة الحساب: https://instagram.com/YourProfile");
+}
+
+function makeCall() {
+  let phone = "+212600000000"; // رقم المكالمة
+  window.location.href = `tel:${phone}`;
+}
+</script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fitness soufiane</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="icon">AL</span> IKHWA
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+           <a href="apropos.html">A propos de nous</a>
+           <a href="portfolio.html">portfolio</a>
+            <a href="servise.html">Services</a>
+            <a href="equipe.html">Equipe</a>
+            <a href="contact.html" class="btn-support">Contact </a>
+        </nav>
+    </header>
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div data-aos="fade-up" class="container">
+            <h2 class="section-title"><b>Portefeuille</b></h2>  
+            <div class="portfolio-filters">
+                <button data-aos="fade-up" class="filter-btn active" data-filter="all">Tout fonctionne</button>
+                <button data-aos="fade-up" class="filter-btn" data-filter="branding">Image de marque</button>
+                <button data-aos="fade-up" class="filter-btn" data-filter="photoshop">Photoshop</button>
+                <button data-aos="fade-up" class="filter-btn" data-filter="web">Conception</button>
+                <button data-aos="fade-up" class="filter-btn" data-filter="wordpress">WordPress</button>
+            </div>
+
+            <div data-aos="fade-up" class="portfolio-grid">
+                <div class="portfolio-item branding">
+                    <img src="image/bench.jpeg" alt="Project 1">
+                    <div class="overlay">
+                        <h3>Analyse Virus</h3>
+                        <p>Image de marque</p>
+                    </div>
+                </div>
+                <div class="portfolio-item photoshop">
+                    <img src="image/ktaf n.jpeg" alt="Project 2">
+                    <div class="overlay">
+                        <h3>Logo Design</h3>
+                        <p>Photoshop</p>
+                    </div>
+                </div>
+                <div class="portfolio-item web">
+                    <img src="image/tapi nn.jpeg" alt="Project 3">
+                    <div class="overlay">
+                        <h3>Design Créatif</h3>
+                        <p>Conception</p>
+                    </div>
+                </div>
+                <div class="portfolio-item web">
+                    <img src="image/dakhela dyl la sale.jpeg" alt="Project 4">
+                    <div class="overlay">
+                        <h3>Interface Moderne</h3>
+                        <p>Conception</p>
+                    </div>
+                </div>
+                <div class="portfolio-item photoshop">
+                    <img src="image/5.jpeg" alt="Project 5">
+                    <div class="overlay">
+                        <h3>Site Business</h3>
+                        <p>Photoshop</p>
+                    </div>
+                </div>
+                <div class="portfolio-item branding">
+                    <img src="image/6.jpeg" alt="Project 6">
+                    <div class="overlay">
+                        <h3>Site Vitrine</h3>
+                        <p>Image de marque</p>
+                    </div>
+                </div>
+                <div class="portfolio-item wordpress">
+                    <img src="image/7.webp" alt="Project 7">
+                    <div class="overlay">
+                        <h3>Portfolio Pro</h3>
+                        <p>WordPress</p>
+                    </div>
+                </div>
+                <div class="portfolio-item wordpress">
+                    <img src="image/8.webp" alt="Project 8">
+                    <div class="overlay">
+                        <h3>Landing Page</h3>
+                        <p>WordPress</p>
+                    </div>
+                </div>
+            </div> <!-- اغلاق portfolio-grid -->
+        </div>
+    </section>
+    <script>
+  // نجيب كل الأزرار وكل المشاريع
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // نحيد active من كل الأزرار ونعطيه غير للزر لي تضغط عليه
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      portfolioItems.forEach(item => {
+        if (filter === 'all') {
+          item.classList.remove('hide'); // نوري كل المشاريع
+        } else {
+          if (item.classList.contains(filter)) {
+            item.classList.remove('hide'); // نوري المشاريع ديال الفئة
+          } else {
+            item.classList.add('hide'); // نخفي المشاريع اللي ما كيتوافقوش
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>
